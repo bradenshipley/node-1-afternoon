@@ -4,6 +4,7 @@ const controller = require("./controllers/messages_controller")
 const app = express()
 
 app.use(json())
+app.use(express.statis(__dirname + "/.../public/build"))
 
 app.get("/api/messages", controller.read)
 app.post("/api/messages/:id", controller.create)

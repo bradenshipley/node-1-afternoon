@@ -14,6 +14,7 @@ module.exports = {
     res.status(200).json(messages)
   },
   read: (req, res, next) => {
+    // console.log("hello")
     res.status(200).json(messages)
   },
   update: (req, res, next) => {
