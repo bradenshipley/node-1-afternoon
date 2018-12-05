@@ -19,11 +19,14 @@ module.exports = {
   },
   update: (req, res, next) => {
     const { text } = req.body
-    const newId = req.params.id
-    const index = messages.findIndex(message => {
-      message.id === newId
-    })
-    message[index] = {
+    const index = messages.findIndex(message => message.id == +req.params.id)
+    // console.log("p", req.params.id)
+    // console.log("m", message.id)
+    // console.log("i", index)
+    let message = messages[index]
+    // console.log(message)
+    // messages[index] = { ...messages[index], text: req.body.text }
+    messages[index] = {
       id: message.id,
       text: text || message.text,
       time: message.time
